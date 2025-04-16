@@ -104,6 +104,9 @@
 				<li><a href="listoffers"> <i class="bi bi-circle"></i><span>List Offers
 							</span>
 				</a></li>
+				<li><a href="addcity"> <i class="bi bi-circle"></i><span>Add City
+							</span>
+				</a></li>
 				
 			</ul></li>
 			
@@ -113,9 +116,9 @@
 
 		<li class="nav-heading">Manage</li>
 
-		<li class="nav-item"><a class="nav-link collapsed"
+		<!-- <li class="nav-item"><a class="nav-link collapsed"
 			href="contectus"> <i class="bi bi-person-lines-fill"></i> <span>Contact Us</span>
-		</a></li>
+		</a></li> -->
 		<!-- End Profile Page Nav -->
 
 		<li class="nav-item"><a class="nav-link collapsed"

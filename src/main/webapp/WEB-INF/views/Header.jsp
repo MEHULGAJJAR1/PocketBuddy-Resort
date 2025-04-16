@@ -21,18 +21,18 @@
                                         <li><a class="active" href="home">home</a></li>
                                         <li><a href="homeoffers">Offers</a></li>
                                         <li><a href="rating">Rating</a></li>
-                                        <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
+                                                <!-- <li><a href="single-blog.html">single-blog</a></li> -->
                                             </ul>
                                         </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+<!--                                         <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="elements.html">elements</a></li>
                                             </ul>
-                                        </li> -->
-                                        <li><a href="contact.html">Contact</a></li>
+                                        </li> 
+                                        <li><a href="contact.html">About</a></li> -->
                                     </ul>
                                 </nav>
                             </div>
@@ -49,17 +49,17 @@
                                 <div class="socail_links">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/">
                                                 <i class="fa fa-facebook-square"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://x.com/">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.instagram.com/">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>

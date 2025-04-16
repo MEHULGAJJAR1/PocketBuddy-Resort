@@ -82,10 +82,6 @@ public class AdminController {
 		return"redirect:/home";
 	}
 	
-	@GetMapping("contectus")
-	public String contectus() {
-		return "ContectUs";
-	}
 	@GetMapping("listuser")
 	public String listuser(UserEntity entity, Model model) {
 		

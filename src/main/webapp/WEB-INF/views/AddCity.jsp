@@ -7,48 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- Add Offer Form -->
-<section class="add_offer_form layout_padding">
-  <div class="container">
-    <h3>Add New Restaurant Offer</h3>
-    <form action="saveOffer" method="post">
-      <div class="form-group">
-        <label>Restaurant Name</label>
-        <input type="text" name="restaurantName" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>Description</label>
-        <textarea name="description" class="form-control" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Coupon Code</label>
-        <input type="text" name="couponCode" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>City</label>
-        <input type="text" name="city" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>Area</label>
-        <input type="text" name="area" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>Discount (%)</label>
-        <input type="number" name="discount" class="form-control" required min="1" max="100">
-      </div>
-      <div class="form-group">
-        <label>Valid Till</label>
-        <input type="date" name="validTill" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>Image URL</label>
-        <input type="text" name="imageUrl" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Add Offer</button>
-    </form>
-  </div>
-</section>
+	<form action="savecity" method="post">
 
+	City Name:<input type="text" name="cityName"><br><br>
+	<input type ="submit" value="Save City">
+
+	</form>
 
 </body>
 </html> --%>
@@ -315,52 +279,16 @@ body {
 <section class="add_offer_form layout_padding">
   <div class="container">
     <h3 class="mb-4">Add New Resort Offer</h3>
-    <form action="saveoffers" method="post" enctype="multipart/form-data" >
+    <form action="savecity" method="post" >
       <div class="row">
-        <div class="col-md-6 mb-3">
-          <label>Resort Name</label>
-          <input type="text" name="resortName" class="form-control" required>
-        </div>
-        
-        <div class="col-md-6 mb-3">
-          <label>Resort Photo</label>
-          <input type="file" name="profilePic" class="form-control" accept="image/" required>
-        </div>
-        
-        <div class="col-md-6 mb-3">
-          <label>Coupon Code</label>
-          <input type="text" name="couponCode" class="form-control" required>
-        </div>
+       
         <div class="col-md-6 mb-3">
           <label>City</label>
-          <input type="text" name="city" class="form-control" required>
+          <input type="text" name="cityName" class="form-control" required>
         </div>
-        <div class="col-md-6 mb-3">
-          <label>Area</label>
-          <input type="text" name="area" class="form-control" required>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label>Discount (%)</label>
-          <input type="number" name="discount" class="form-control" required min="1" max="100">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label>Valid Till</label>
-          <input type="date" name="validTill" class="form-control" required>
-        </div>
-         <div class="col-md-6 mb-3">
-          <label>Price</label>
-          <input type="text" name="price" class="form-control" required>
-        </div>
-        <div class="col-md-12 mb-3">
-          <label>Location</label>
-          <textarea name="description" class="form-control" rows="2" required></textarea>
-        </div>
-        <!-- <div class="col-md-12 mb-3">
-          <label>Image Upload</label>
-          <input type="file" name="imageUrl" class="form-control" required>
-        </div> -->
+        
         <div class="col-md-12 text-end">
-          <button type="submit" class="btn btn-success">Add Offer</button>
+          <button type="submit" class="btn btn-success">Add city</button>
         </div>
       </div>
     </form>

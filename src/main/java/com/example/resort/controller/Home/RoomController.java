@@ -13,5 +13,9 @@ public class RoomController {
 	}
 	
 	//@GetMapping("Popupogin")
+	@GetMapping("contectus")
+	public String contectus() {
+		return "ContectUs";
+	}
 
 }

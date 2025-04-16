@@ -567,13 +567,13 @@
         font-size: 3rem;
         font-weight: bold;
         margin-bottom: 10px;
-        color: white;
+        color: #a56d6d;
         text-shadow: 1px 1px 3px #000;
     }
 
     header p {
         font-size: 1.2rem;
-        color: white;
+        color: #a56d6d;
         text-shadow: 1px 1px 2px #000;
     }
 
@@ -657,7 +657,7 @@
 
     .offer-badge {
         position: absolute;
-        top: 10px;
+        top: 14px;
         right: 10px;
         background-color: #ff4d4d;
         color: white;
@@ -712,10 +712,10 @@
 <header>
     <div class="main-header-area">
         <ul id="navigation">
-            <li><a class="active" href="home">Home</a></li>
-            <li><a href="homeoffers">Offers</a></li>
+            <li><a href="home">Home</a></li>
+            <li><a class="active" href="homeoffers">Offers</a></li>
             <li><a href="rating">Rating</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
         </ul>
     </div>
     <h1>Exclusive Resort Offers</h1>
@@ -732,13 +732,11 @@
             <h3>Filter Offers</h3>
             <div class="mb-3">
                 <label>Select City</label>
-                <select id="city-select" class="form-select">
-                    <option value="">All Cities</option>
-                    <option value="Ahmedabad">Ahmedabad</option>
-                    <option value="Shimla">Shimla</option>
-                    <option value="Manali">Manali</option>
-                    <option value="Jaipur">Jaipur</option>
-                    <option value="Munnar">Munnar</option>
+                <select name="cityId" id="city-select" class="form-select">
+                    <option value="">Select City</option>
+                    <c:forEach items="${allcity}" var="a">
+                        <option value="${a.cityName}">${a.cityName}</option>
+                    </c:forEach>
                 </select>
             </div>
             <div class="mb-3">
@@ -757,19 +755,30 @@
                 <c:forEach items="${offerList}" var="o">
                     <div class="col-md-6 col-lg-4" data-city="${o.city}" data-area="${o.area}" data-offer-type="${o.offerType}">
                         <div class="offer-card">
-                            <div class="position-relative">
-                                <img src="https://source.unsplash.com/random/600x400/?resort,${o.resortName}" class="offer-image" alt="${o.resortName}">
+                           <%--  <div class="position-relative">
                                 <div class="offer-badge">
                                     <c:choose>
                                         <c:when test="${o.price < (o.price + 1000) * 0.9}">
                                             ${Math.round((1 - o.price / (o.price + 1000)) * 100)}% OFF
                                         </c:when>
-                                        <c:otherwise>
-                                            Special
-                                        </c:otherwise>
+                                        <c:otherwise>Special</c:otherwise>
                                     </c:choose>
                                 </div>
-                            </div>
+                            </div> --%>
+                            <div class="position-relative">
+    <!-- Random Image from Backend -->
+    <img src="${o.profilePicPath}" class="img-fluid rounded" alt="${o.resortName}">
+
+    <div class="offer-badge">
+        <c:choose>
+            <c:when test="${o.price < (o.price + 1000) * 0.9}">
+                ${Math.round((1 - o.price / (o.price + 1000)) * 100)}% OFF
+            </c:when>
+            <c:otherwise>Special</c:otherwise>
+        </c:choose>
+    </div>
+</div>
+                            
                             <div class="p-3">
                                 <h5>${o.resortName}</h5>
                                 <p class="text-muted"><i class="fas fa-map-marker-alt"></i> ${o.area}, ${o.city}</p>
@@ -786,7 +795,6 @@
                                         <span class="original-price">₹${o.price + 1000}</span>
                                         <span class="price">₹${o.price}</span>
                                     </div>
-                                    <button class="btn btn-primary btn-sm" onclick="copyToClipboard('${o.couponCode}')">Copy</button>
                                 </div>
                             </div>
                         </div>
@@ -808,25 +816,24 @@
     };
 
     // Initialize city and area dropdowns
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const citySelect = document.getElementById('city-select');
         const areaSelect = document.getElementById('area-select');
         const areaLoading = document.getElementById('areaLoading');
-        
+
         // City change event
-        citySelect.addEventListener('change', function() {
+        citySelect.addEventListener('change', function () {
             const selectedCity = this.value;
-            
+
             // Reset and disable area dropdown
             areaSelect.innerHTML = '<option value="">All Areas</option>';
             areaSelect.disabled = !selectedCity;
-            
+
             if (selectedCity) {
                 areaLoading.style.display = 'block';
-                
+
                 // Simulate API call delay
                 setTimeout(() => {
-                    // Populate areas for selected city
                     const areas = cityAreas[selectedCity] || [];
                     areas.forEach(area => {
                         const option = document.createElement('option');
@@ -834,7 +841,7 @@
                         option.textContent = area;
                         areaSelect.appendChild(option);
                     });
-                    
+
                     areaLoading.style.display = 'none';
                     filterOffers();
                 }, 500);
@@ -842,7 +849,7 @@
                 filterOffers();
             }
         });
-        
+
         // Area change event
         areaSelect.addEventListener('change', filterOffers);
     });
@@ -850,14 +857,14 @@
     function filterOffers() {
         const cityFilter = document.getElementById('city-select').value.toLowerCase();
         const areaFilter = document.getElementById('area-select').value.toLowerCase();
-        
+
         document.querySelectorAll('.col-md-6.col-lg-4').forEach(offer => {
             const city = offer.getAttribute('data-city').toLowerCase();
             const area = offer.getAttribute('data-area').toLowerCase();
-            
+
             const cityMatch = !cityFilter || city === cityFilter;
             const areaMatch = !areaFilter || area === areaFilter;
-            
+
             offer.style.display = (cityMatch && areaMatch) ? 'block' : 'none';
         });
     }

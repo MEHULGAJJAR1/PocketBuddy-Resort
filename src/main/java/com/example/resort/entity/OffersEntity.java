@@ -21,6 +21,8 @@ public class OffersEntity {
     private String validTill;
     private double price;
     private String offerType;
+    private String profilePicPath;
+    
 	public Integer getOfferuserId() {
 		return offeruserId;
 	}
@@ -74,6 +76,12 @@ public class OffersEntity {
 	}
 	public void setOfferType(String offerType) {
 		this.offerType = offerType;
+	}
+	public String getProfilePicPath() {
+		return profilePicPath;
+	}
+	public void setProfilePicPath(String profilePicPath) {
+		this.profilePicPath = profilePicPath;
 	}
 	
 

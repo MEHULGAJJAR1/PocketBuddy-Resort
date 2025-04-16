@@ -571,6 +571,10 @@ form .text h3 a:hover{
             <input type="password" placeholder="Create Password" name="password" required>
             <i class="fas fa-lock"></i>
           </div>
+          <div class="input-box">
+            <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+            <i class="fas fa-lock"></i>
+          </div>
           
           <div class="file-input">
             <label for="profile-pic">

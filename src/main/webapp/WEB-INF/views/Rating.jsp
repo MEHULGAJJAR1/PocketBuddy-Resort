@@ -383,6 +383,22 @@
             background-color: #1565C0;
         }
         
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .button-group .back-btn {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .button-group .back-btn:hover {
+            background-color: #eee;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 margin: 15px;
@@ -408,12 +424,15 @@
             .star-rating label {
                 font-size: 30px;
             }
+            
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-
-	
     <div class="container">
         <div class="header">
             <div class="logo">
@@ -445,8 +464,6 @@
                         <label for="star1" class="fas fa-star"></label>
                     </div>
                 </div>
-
-                
                 
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -458,94 +475,21 @@
                     <textarea id="review-text" name="review" class="form-control" placeholder="Tell us about your experience... What did you like or dislike?" required></textarea>
                 </div>
                 
-                <button type="submit" class="submit-btn">Submit Review</button>
-            </form>
-            
-            <div class="rating-summary">
-                <div class="rating-value">4.7</div>
-                <div class="rating-details">
-                    <h4>Based on 256 reviews</h4>
-                    
-                    <div class="rating-progress">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
-                        <div class="progress-value">80%</div>
-                    </div>
-                    
-                    <div class="rating-progress">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 15%;"></div>
-                        </div>
-                        <div class="progress-value">15%</div>
-                    </div>
-                    
-                    <div class="rating-progress">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 3%;"></div>
-                        </div>
-                        <div class="progress-value">3%</div>
-                    </div>
-                    
-                    <div class="rating-progress">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 1%;"></div>
-                        </div>
-                        <div class="progress-value">1%</div>
-                    </div>
-                    
-                    <div class="rating-progress">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 1%;"></div>
-                        </div>
-                        <div class="progress-value">1%</div>
-                    </div>
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                    <a href="javascript:history.back()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
                 </div>
-            </div>
+            </form>
         </div>
         
         <div class="success-message" id="success-message">
             <i class="fas fa-check-circle"></i>
-            <h2>Thank You for Your Review!</h2>
-            <p>Your feedback helps us improve our service for everyone.</p>
+            <h2>Thank You for Your Feedback!</h2>
+            <p>Your review has been submitted successfully. We appreciate your time and feedback.</p>
             <button class="back-btn" id="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                <span>Write Another Review</span>
+                <i class="fas fa-arrow-left"></i> Back to Form
             </button>
         </div>
     </div>
@@ -590,4 +534,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
